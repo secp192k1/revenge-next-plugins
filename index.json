@@ -1,0 +1,79 @@
+{
+  "format": 1,
+  "name": "My Plugin Repository",
+  "description": "Example plugin repository from the Revenge plugin template.",
+  "plugins": {
+    "dev.alphexo.disable-call-idle": {
+      "name": "Disable Call Idle",
+      "description": "Stops Discord from disconnecting you after 3 minutes alone in a DM call.",
+      "author": "secp192k1",
+      "icon": "PhoneCallIcon",
+      "channels": {
+        "latest": "1.0.0"
+      },
+      "versions": {
+        "1.0.0": {
+          "url": "https://rn.alphexo.dev/pool/dev.alphexo.disable-call-idle@1.0.0.zip",
+          "sha256": "db33f423f3b9f11da10122654c2c45e327dc6855a147be22d49c06161cf1d587",
+          "size": 942,
+          "dependencies": {
+            "revenge.api": {
+              "version": ">=1 <2"
+            },
+            "discord": {
+              "version": "*"
+            }
+          }
+        }
+      }
+    },
+    "dev.alphexo.preview-attachments": {
+      "name": "Preview Attachments",
+      "description": "Adds a preview button next to the download button on text file attachments that opens Discord's built-in text preview.",
+      "author": "secp192k1",
+      "icon": "EyeIcon",
+      "channels": {
+        "latest": "0.1.0"
+      },
+      "versions": {
+        "0.1.0": {
+          "url": "https://rn.alphexo.dev/pool/dev.alphexo.preview-attachments@0.1.0.zip",
+          "sha256": "acdf5c7ccd8321b749b6685b0abfbedca0a57330721337d631fd61a3838d47c3",
+          "size": 9196,
+          "dependencies": {
+            "revenge.api": {
+              "version": ">=1 <2"
+            },
+            "discord": {
+              "version": "*"
+            }
+          }
+        }
+      }
+    },
+    "dev.alphexo.sekai-stickers": {
+      "name": "Sekai Stickers",
+      "description": "Adds a sticker picker button that opens a Project Sekai sticker maker and attaches the sticker to your message. Based on sekai-stickers by TheOriginalAyaka.",
+      "author": "secp192k1",
+      "icon": "StickerIcon",
+      "channels": {
+        "latest": "1.0.0"
+      },
+      "versions": {
+        "1.0.0": {
+          "url": "https://rn.alphexo.dev/pool/dev.alphexo.sekai-stickers@1.0.0.zip",
+          "sha256": "d2db4a8135ca16ad541cc3f0947a10cd5bfc73f09b755a2b635cb654cc747d3f",
+          "size": 9920,
+          "dependencies": {
+            "revenge.api": {
+              "version": ">=1 <2"
+            },
+            "discord": {
+              "version": "*"
+            }
+          }
+        }
+      }
+    }
+  }
+}
