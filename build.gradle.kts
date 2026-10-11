@@ -115,6 +115,7 @@ fun findJsTool(): JsTool? {
         }
     }
     val pathDirs = System.getenv("PATH").orEmpty().split(File.pathSeparator).filter(String::isNotEmpty)
+    val isWindows = System.getProperty("os.name").startsWith("Windows")
 
     fun candidatesFor(kind: String): List<File> = buildList {
         pathDirs.forEach { add(File(it, kind)) }
@@ -130,6 +131,8 @@ fun findJsTool(): JsTool? {
         }
         add(File("/usr/local/bin/$kind"))
         add(File("/opt/homebrew/bin/$kind"))
+    }.let { files ->
+        if (isWindows) files.flatMap { listOf(File("${it.path}.exe"), File("${it.path}.cmd")) } else files
     }
 
     val kinds = kindOverride?.let(::listOf) ?: listOf("bun", "npm", "deno")
