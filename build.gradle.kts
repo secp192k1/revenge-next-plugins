@@ -206,12 +206,14 @@ configure(subprojects.filter { it.path.startsWith(":plugins:") }) {
             if (classFiles.isEmpty()) error("No compiled classes found to dex in $path.")
 
             val sdkDir = sdkDirProvider.get().asFile
+            // Windows build tools ship d8 as a batch file
+            val d8Name = if (System.getProperty("os.name").startsWith("Windows")) "d8.bat" else "d8"
             // Use newest d8 as the AGP-default build-tools could ship one too old for class files from a newer toolchain
             val d8 = File(sdkDir, "build-tools").listFiles()
                 ?.sortedByDescending(File::getName)
-                ?.map { File(it, "d8") }
+                ?.map { File(it, d8Name) }
                 ?.firstOrNull(File::isFile)
-                ?: file("$sdkDir/build-tools/$buildToolsVersion/d8")
+                ?: file("$sdkDir/build-tools/$buildToolsVersion/$d8Name")
             val androidJar = file("$sdkDir/platforms/android-$compileSdkVer/android.jar")
             require(d8.exists()) { "d8 not found at $d8" }
             require(androidJar.exists()) { "android.jar not found at $androidJar" }
