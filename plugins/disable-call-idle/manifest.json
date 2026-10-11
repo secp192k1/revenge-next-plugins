@@ -3,7 +3,7 @@
 	"id": "dev.alphexo.disable-call-idle",
 	"name": "Disable Call Idle",
 	"description": "Stops Discord from disconnecting you after 3 minutes alone in a DM call.",
-	"author": "alphexo",
+	"author": "secp192k1",
 	"icon": "PhoneCallIcon",
 	"version": "1.0.0",
 	"dependencies": {
