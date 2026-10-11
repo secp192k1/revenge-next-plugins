@@ -20,7 +20,8 @@ export default function patchCallIdleTimeout(): () => void {
 	function patchCallIdleManager(moduleExports: any, source: string) {
 		if (unpatchStart) return
 
-		const idleTimeout: IdleTimeout | undefined = moduleExports?.idleTimeout ?? moduleExports?.default?.idleTimeout
+		const idleTimeout: IdleTimeout | undefined =
+			moduleExports?.idleTimeout ?? moduleExports?.default?.idleTimeout
 
 		if (typeof idleTimeout?.start !== 'function') {
 			console.error(`${LOG_TAG} idleTimeout.start not found via ${source}`)
