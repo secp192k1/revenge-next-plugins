@@ -1,0 +1,20 @@
+{
+	"format": 1,
+	"id": "dev.alphexo.sekai-stickers",
+	"name": "Sekai Stickers",
+	"description": "Adds a sticker picker button that opens a Project Sekai sticker maker and attaches the sticker to your message. Based on sekai-stickers by TheOriginalAyaka.",
+	"author": "secp192k1",
+	"icon": "StickerIcon",
+	"version": "1.0.0",
+	"dependencies": {
+		"revenge.api": {
+			"version": ">=1 <2"
+		},
+		"discord": {
+			"version": "*"
+		}
+	},
+	"dist": {
+		"script": "index.js"
+	}
+}
