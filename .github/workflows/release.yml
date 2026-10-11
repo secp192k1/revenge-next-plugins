@@ -56,6 +56,11 @@ jobs:
         if: steps.plan.outputs.count != '0'
         run: .github/scripts/publish-pool.sh
 
+      # Pushes without new versions still carry repo.config.json and PAGES_BASE_URL changes into the index.
+      - name: Refresh index.json
+        if: steps.plan.outputs.count == '0'
+        run: .github/scripts/regenerate-index.sh
+
       - name: Tag and write changelogs
         if: steps.plan.outputs.count != '0'
         env:
