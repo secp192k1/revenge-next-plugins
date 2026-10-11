@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Shared helpers for pool workflows.
 
 # Branch holding the pool and the index. Set the POOL_BRANCH repository variable to move it.
@@ -21,6 +22,20 @@ pages_base_url() {
     [ "$repo" = "${owner}.github.io" ] || base="${base}/${repo}"
 
     printf '%s' "$base"
+}
+
+# Stages the CNAME file GitHub Pages reads, so the custom domain in PAGES_BASE_URL survives a rebuilt pool branch.
+write_cname() {
+    [ -n "${PAGES_BASE_URL:-}" ] || return 0
+
+    local host="${PAGES_BASE_URL#*://}"
+    host="${host%%/*}"
+    if [[ "$host" == *.github.io ]]; then
+        return 0
+    fi
+
+    printf '%s\n' "$host" > "$POOL_CHECKOUT/CNAME"
+    git -C "$POOL_CHECKOUT" add CNAME
 }
 
 # Commits staged pool changes and pushes them. Skips if nothing is staged.

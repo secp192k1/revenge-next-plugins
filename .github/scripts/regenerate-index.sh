@@ -14,6 +14,7 @@ bun run generate-index \
 
 # Stage the pool too, so a manually deleted artifact also gets deleted with the updated index.
 git -C "$POOL_CHECKOUT" add pool index.json
+write_cname
 commit_pool \
     "${UNCHANGED_MESSAGE:-Index already matches the pool.}" \
     "${COMMIT_MESSAGE:-Regenerate repository index}"

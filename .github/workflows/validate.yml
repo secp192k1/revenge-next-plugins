@@ -31,6 +31,8 @@ jobs:
 
       - name: Build all plugins
         run: ./gradlew --no-daemon packageAllPlugins
+        env:
+          GITHUB_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }} # Secrets are not passed to fork PRs, so those fail on native plugins.
 
       - name: Generate index from built artifacts
         run: |

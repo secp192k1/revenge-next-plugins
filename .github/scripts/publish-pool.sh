@@ -32,6 +32,7 @@ attempt_publish() {
         --out "$POOL_CHECKOUT/index.json" || return 1
 
     git -C "$POOL_CHECKOUT" add pool index.json || return 1
+    write_cname || return 1
     commit_pool "Pool already holds this plan." "Publish ${count} plugin release(s)"
 }
 
