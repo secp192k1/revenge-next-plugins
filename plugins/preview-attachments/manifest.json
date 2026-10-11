@@ -1,0 +1,24 @@
+{
+	"format": 1,
+	"id": "dev.alphexo.preview-attachments",
+	"name": "Preview Attachments",
+	"description": "Adds a preview button next to the download button on text file attachments that opens Discord's built-in text preview.",
+	"author": "secp192k1",
+	"icon": "EyeIcon",
+	"version": "0.1.0",
+	"dependencies": {
+		"revenge.api": {
+			"version": ">=1 <2"
+		},
+		"discord": {
+			"version": "*"
+		}
+	},
+	"dist": {
+		"script": "index.js",
+		"android": {
+			"path": "plugin.jar",
+			"class": "dev.alphexo.previewattachments.PreviewAttachments"
+		}
+	}
+}
