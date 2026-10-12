@@ -13,7 +13,7 @@ export function registerPreviewMethod(): () => void {
 	let contentHandlers: ContentHandlers | undefined
 
 	registerJSMethod(
-		'dev.alphexo.preview-attachments',
+		'dev.alphexo.preview-attachments.preview',
 		(fileName: string, url: string) => {
 			if (!contentHandlers) {
 				console.error(
