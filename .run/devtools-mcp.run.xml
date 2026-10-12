@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="devtools-mcp" type="NodeJSConfigurationType" path-to-node="$USER_HOME$/.bun/bin/bunx" node-parameters="@revenge-mod/devtools-server --mcp --host 100.0.0.1 --port 7864" working-dir="$PROJECT_DIR$">
+    <method v="2" />
+  </configuration>
+</component>
