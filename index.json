@@ -33,13 +33,26 @@
       "author": "secp192k1",
       "icon": "EyeIcon",
       "channels": {
-        "latest": "0.1.0"
+        "latest": "0.1.1"
       },
       "versions": {
         "0.1.0": {
           "url": "https://rn.alphexo.dev/pool/dev.alphexo.preview-attachments@0.1.0.zip",
           "sha256": "acdf5c7ccd8321b749b6685b0abfbedca0a57330721337d631fd61a3838d47c3",
           "size": 9196,
+          "dependencies": {
+            "revenge.api": {
+              "version": ">=1 <2"
+            },
+            "discord": {
+              "version": "*"
+            }
+          }
+        },
+        "0.1.1": {
+          "url": "https://rn.alphexo.dev/pool/dev.alphexo.preview-attachments@0.1.1.zip",
+          "sha256": "4951b17c9f992e1b12131ea96bc7abec57e24a2ed3be4e223d13b050a9b5be60",
+          "size": 9848,
           "dependencies": {
             "revenge.api": {
               "version": ">=1 <2"
